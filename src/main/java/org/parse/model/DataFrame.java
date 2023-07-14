@@ -1,9 +1,12 @@
 package org.parse.model;
 import java.time.LocalDateTime;
 
+import com.hazelcast.topic.Message;
+import com.hazelcast.topic.MessageListener;
 
 
-public class DataFrame {
+
+public class DataFrame  {
     Integer Gateway;
     Integer App;  
     String TypeGw ;
@@ -133,7 +136,9 @@ public class DataFrame {
     public void setRssi(Integer rssi) {
         Rssi = rssi;
     }
-    
+
+
+  
 
     
 
