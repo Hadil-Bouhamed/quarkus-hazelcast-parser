@@ -7,9 +7,8 @@ import com.hazelcast.topic.Message;
 import com.hazelcast.topic.MessageListener;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import org.parse.model.DataFrame;
+
 
 @ApplicationScoped
 public class THLParseListener implements  MessageListener<DataFrame> {
@@ -18,18 +17,12 @@ public class THLParseListener implements  MessageListener<DataFrame> {
     
     @Transactional
     public void onMessage(Message<DataFrame> message) {
-        ThlParser(message.getMessageObject());
-         
+        ThlParser(message.getMessageObject()); 
         throw new UnsupportedOperationException("Unimplemented method 'onMessage'");
     }
 
-   /* public static void main(String args[]){
-    THLParseListener thlParseListener = new THLParseListener();
-    thlParseListener.ThlParser("FF030000080136096400000005EB063C");
-    }*/
-    
      
-    public void ThlParser(DataFrame dataframe) {
+    public ParserDataBrut ThlParser(DataFrame dataframe) {
        
         String Data = dataframe.getData();
         Integer Id = getID(Data);
@@ -45,6 +38,7 @@ public class THLParseListener implements  MessageListener<DataFrame> {
         System.out.println("Battery = "+databrut.getBattery());
         System.out.println("luminosity = "+databrut.getLuminosity());
         System.out.println("Humidity = "+databrut.getHumidity());
+        return databrut;
     }
 
      public Integer getID(String data) {

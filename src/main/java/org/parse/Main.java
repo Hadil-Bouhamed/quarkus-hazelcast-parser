@@ -2,8 +2,6 @@ package org.parse;
 import org.parse.hazelcast.Cluster;
 import org.parse.hazelcast.Parser;
 import org.parse.hazelcast.THLParseListener;
-import org.parse.model.DataFrame;
-
 import io.quarkus.runtime.Quarkus;
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;

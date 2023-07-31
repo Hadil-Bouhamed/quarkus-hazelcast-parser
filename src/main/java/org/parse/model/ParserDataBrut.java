@@ -1,6 +1,4 @@
 package org.parse.model;
-import com.hazelcast.topic.Message;
-import jakarta.transaction.Transactional;
 
 public class ParserDataBrut {
         Integer ID ; 
